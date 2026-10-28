@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #070709;
+  --surface: #0e0e13;
+  --surface-subtle: #14141c;
+  --border: #21212c;
+  --border-subtle: #191924;
+  --text-main: #f4f4f7;
+  --text-muted: #8b8b9e;
+  --text-subtle: #565668;
+  --accent: #d4ff32;
+  --accent-muted: rgba(212, 255, 50, 0.12);
+  --accent-glow: rgba(212, 255, 50, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #23232f;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Subtle architectural dot grid */
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.subtle-lines {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Refined tag badge */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
+  background: #121218;
+  border: 1px solid #232330;
+  color: #a2a2b8;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.tech-badge:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(212, 255, 50, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Interactive cursor glow */
+.cursor-ambient-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 255, 50, 0.04) 0%, transparent 65%);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* Calm infinite tag ticker */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 42s linear infinite;
+  will-change: transform;
+}
+
+.pause-hover:hover,
+.pause-hover:focus-within {
+  animation-play-state: paused !important;
+}
+
+/* Stage Curtain Drapery Shading */
+.curtain-fabric-left {
+  background: 
+    linear-gradient(90deg, 
+      rgba(7,7,9,1) 0%, 
+      rgba(16,16,24,0.85) 15%, 
+      rgba(7,7,9,0.95) 30%, 
+      rgba(20,20,30,0.8) 45%, 
+      rgba(7,7,9,1) 60%, 
+      rgba(15,15,22,0.85) 75%, 
+      rgba(9,9,12,1) 90%, 
+      rgba(5,5,7,1) 100%
+    );
+  box-shadow: inset -20px 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.curtain-fabric-right {
+  background: 
+    linear-gradient(90deg, 
+      rgba(5,5,7,1) 0%, 
+      rgba(9,9,12,1) 10%, 
+      rgba(15,15,22,0.85) 25%, 
+      rgba(7,7,9,1) 40%, 
+      rgba(20,20,30,0.8) 55%, 
+      rgba(7,7,9,0.95) 70%, 
+      rgba(16,16,24,0.85) 85%, 
+      rgba(7,7,9,1) 100%
+    );
+  box-shadow: inset 20px 0 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Custom Cursor Rules */
+html.has-custom-cursor,
+html.has-custom-cursor body,
+html.has-custom-cursor a,
+html.has-custom-cursor button,
+html.has-custom-cursor [role="button"],
+html.has-custom-cursor [role="tab"] {
+  cursor: none !important;
+}
+
+html.has-custom-cursor input,
+html.has-custom-cursor textarea,
+html.has-custom-cursor [contenteditable="true"] {
+  cursor: text !important;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-ticker {
+    animation: none !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

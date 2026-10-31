@@ -63,15 +63,15 @@ export default function FolioReveal() {
           role="dialog"
           aria-modal="true"
           aria-label="Designed Stage Proscenium Opening"
-          className="fixed inset-0 z-[300] overflow-hidden select-none pointer-events-auto bg-[#050508]"
+          className="fixed inset-0 z-[300] overflow-hidden select-none pointer-events-auto bg-[#06110c]"
         >
           {/* Proscenium Outer Arch Trim (Top Header Bar) */}
-          <div className="absolute top-0 inset-x-0 z-30 h-10 bg-[#0c0c14] border-b border-[#222232] px-6 flex items-center justify-between text-[10px] font-mono text-[#767688]">
-            <div className="flex items-center gap-2 text-[#d4ff32]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32] animate-pulse" />
+          <div className="absolute top-0 inset-x-0 z-30 h-10 bg-[#06110c] border-b border-[#14291e] px-6 flex items-center justify-between text-[10px] font-mono text-[#8a8a9a]">
+            <div className="flex items-center gap-2 text-[#a31c1b]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] animate-pulse" />
               <span className="font-bold tracking-widest uppercase">PROSCENIUM ARCH // STAGE 01</span>
             </div>
-            <span className="tracking-widest hidden sm:inline text-[#555568]">
+            <span className="tracking-widest hidden sm:inline text-[#666675]">
               SEC: DSU-RAS // BENGALURU, IN
             </span>
             <span className="text-[#a0a0b2]">ADITYA S. SHEREGAR</span>
@@ -79,7 +79,7 @@ export default function FolioReveal() {
 
           {/* LEFT CURTAIN PANEL with layered drapery folds */}
           <motion.div
-            className="absolute top-10 bottom-0 left-0 w-1/2 curtain-fabric-left flex flex-col justify-center items-end pr-8 sm:pr-14 border-r border-dashed border-[#d4ff32]/35 z-10"
+            className="absolute top-10 bottom-0 left-0 w-1/2 curtain-fabric-left flex flex-col justify-center items-end pr-8 sm:pr-14 border-r border-dashed border-[#a31c1b]/35 z-10"
             initial={{ x: 0 }}
             animate={{ x: 0 }}
             exit={{ x: '-102%' }}
@@ -90,18 +90,18 @@ export default function FolioReveal() {
               initial={{ opacity: 0.3, y: '-100%' }}
               animate={{ opacity: [0.2, 0.55, 0.2], y: ['-50%', '100%'] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent via-[#d4ff32]/8 to-transparent pointer-events-none"
+              className="absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent via-[#a31c1b]/10 to-transparent pointer-events-none"
             />
 
             {/* Left Content (First part of Title) */}
             <div className="text-right max-w-md space-y-2">
-              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#d4ff32] block font-semibold">
+              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#a31c1b] block font-semibold">
                 [ Selected Work · 2024–2026 ]
               </span>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#f4f4f7] leading-none">
                 ADITYA S.
               </h1>
-              <p className="text-xs sm:text-sm font-mono text-[#7c7c90] hidden sm:block">
+              <p className="text-xs sm:text-sm font-mono text-[#8a8a9e] hidden sm:block">
                 IEEE RAS Chapter Chair
               </p>
             </div>
@@ -113,13 +113,13 @@ export default function FolioReveal() {
               initial={{ y: '-100%' }}
               animate={{ y: '200%' }}
               transition={{ duration: 1.4, repeat: Infinity, ease: 'linear' }}
-              className="w-1.5 -ml-[2px] h-48 bg-gradient-to-b from-transparent via-[#d4ff32] to-transparent shadow-[0_0_12px_#d4ff32]"
+              className="w-1.5 -ml-[2px] h-48 bg-gradient-to-b from-transparent via-[#a31c1b] to-transparent shadow-[0_0_14px_#a31c1b]"
             />
           </div>
 
           {/* RIGHT CURTAIN PANEL with layered drapery folds */}
           <motion.div
-            className="absolute top-10 bottom-0 right-0 w-1/2 curtain-fabric-right flex flex-col justify-center items-start pl-8 sm:pl-14 border-l border-dashed border-[#d4ff32]/35 z-10"
+            className="absolute top-10 bottom-0 right-0 w-1/2 curtain-fabric-right flex flex-col justify-center items-start pl-8 sm:pl-14 border-l border-dashed border-[#a31c1b]/35 z-10"
             initial={{ x: 0 }}
             animate={{ x: 0 }}
             exit={{ x: '102%' }}
@@ -130,15 +130,15 @@ export default function FolioReveal() {
               initial={{ opacity: 0.3, y: '-100%' }}
               animate={{ opacity: [0.2, 0.55, 0.2], y: ['-50%', '100%'] }}
               transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
-              className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-transparent via-[#d4ff32]/8 to-transparent pointer-events-none"
+              className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-transparent via-[#a31c1b]/10 to-transparent pointer-events-none"
             />
 
             {/* Right Content (Second part of Title & Actions) */}
             <div className="text-left max-w-md space-y-3">
-              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#767688] block">
+              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#8a8a9a] block">
                 Folio Dossier
               </span>
-              <div className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#d4ff32] leading-none">
+              <div className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#a31c1b] leading-none">
                 SHEREGAR
               </div>
               <p className="text-xs sm:text-sm font-mono text-[#a0a0b6]">
@@ -149,7 +149,7 @@ export default function FolioReveal() {
               <div className="pt-3 flex items-center gap-4">
                 <button
                   onClick={dismiss}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-[#d4ff32] text-[#070709] font-mono font-bold text-xs hover:bg-[#e4ff57] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent group"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-[#a31c1b] text-[#ffffff] font-mono font-bold text-xs hover:bg-[#bd2423] shadow-[0_0_20px_rgba(163,28,27,0.35)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent group"
                   autoFocus
                 >
                   <span>ENTER STAGE</span>
@@ -157,7 +157,7 @@ export default function FolioReveal() {
                 </button>
                 <button
                   onClick={dismiss}
-                  className="text-xs font-mono text-[#6c6c80] hover:text-[#f4f4f7] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent px-2 py-1 rounded"
+                  className="text-xs font-mono text-[#8a8a9e] hover:text-[#f4f4f7] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent px-2 py-1 rounded"
                 >
                   Skip Intro →
                 </button>
@@ -171,7 +171,7 @@ export default function FolioReveal() {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: [0, 0.8, 0], scaleX: 1 }}
               transition={{ duration: 0.75, ease: 'easeOut' }}
-              className="absolute inset-0 z-40 bg-gradient-to-r from-transparent via-[#d4ff32]/15 to-transparent pointer-events-none"
+              className="absolute inset-0 z-40 bg-gradient-to-r from-transparent via-[#a31c1b]/20 to-transparent pointer-events-none"
             />
           )}
         </div>

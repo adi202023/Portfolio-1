@@ -119,8 +119,8 @@ export default function InteractiveNetwork() {
             ctx.moveTo(n.x, n.y);
             ctx.lineTo(n2.x, n2.y);
             ctx.strokeStyle = n.layer === 2 || n2.layer === 2
-              ? `rgba(212, 255, 50, ${alpha * 1.3})`
-              : `rgba(160, 160, 190, ${alpha})`;
+              ? `rgba(163, 28, 27, ${alpha * 1.5})`
+              : `rgba(160, 160, 180, ${alpha})`;
             ctx.lineWidth = 0.9;
             ctx.stroke();
           }
@@ -134,8 +134,8 @@ export default function InteractiveNetwork() {
         ctx.arc(n.x, n.y, n.radius, 0, Math.PI * 2);
 
         if (n.layer === 2) {
-          ctx.fillStyle = '#d4ff32';
-          ctx.shadowColor = 'rgba(212, 255, 50, 0.4)';
+          ctx.fillStyle = '#a31c1b';
+          ctx.shadowColor = 'rgba(163, 28, 27, 0.5)';
           ctx.shadowBlur = 8;
         } else {
           ctx.fillStyle = '#8b8b9e';

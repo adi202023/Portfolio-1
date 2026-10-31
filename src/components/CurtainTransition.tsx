@@ -66,9 +66,9 @@ export function CurtainProvider({ children }: { children: React.ReactNode }) {
                 ease: [0.76, 0, 0.24, 1],
               }}
               style={{ transformOrigin: 'top' }}
-              className="w-full h-1/2 bg-[#09090e] border-b border-[#d4ff32]/40 relative flex items-end justify-center pb-4"
+              className="w-full h-1/2 bg-[#06110c] border-b border-[#a31c1b]/40 relative flex items-end justify-center pb-4"
             >
-              <div className="font-mono text-[10px] tracking-widest text-[#d4ff32] uppercase opacity-70">
+              <div className="font-mono text-[10px] tracking-widest text-[#a31c1b] uppercase opacity-85 font-semibold">
                 ADITYA S. SHEREGAR // {curtainLabel}
               </div>
             </motion.div>
@@ -83,11 +83,11 @@ export function CurtainProvider({ children }: { children: React.ReactNode }) {
                 ease: [0.76, 0, 0.24, 1],
               }}
               style={{ transformOrigin: 'bottom' }}
-              className="w-full h-1/2 bg-[#09090e] border-t border-[#d4ff32]/40 relative flex items-start justify-center pt-4"
+              className="w-full h-1/2 bg-[#06110c] border-t border-[#a31c1b]/40 relative flex items-start justify-center pt-4"
             >
               <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32] animate-ping" />
-                <span className="font-mono text-[9px] tracking-widest text-[#727284] uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] animate-ping" />
+                <span className="font-mono text-[9px] tracking-widest text-[#8a8a9a] uppercase">
                   SYSTEM TRANSITION ACTIVE
                 </span>
               </div>

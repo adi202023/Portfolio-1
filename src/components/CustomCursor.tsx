@@ -136,13 +136,13 @@ export default function CustomCursor() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.15 }}
-              className="flex items-center gap-1 px-3 py-1 bg-[#d4ff32] text-[#070709] rounded-sm shadow-[0_4px_16px_rgba(212,255,50,0.45)] border border-[#e2ff5b]"
+              className="flex items-center gap-1.5 px-3 py-1 bg-[#a31c1b] text-[#ffffff] rounded-sm shadow-[0_4px_16px_rgba(163,28,27,0.45)] border border-[#bd2423]"
               style={{
                 transform: 'translate(-10px, -10px)',
               }}
             >
               {/* Precision corner indicator */}
-              <span className="w-1.5 h-1.5 rounded-full bg-[#070709]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ffffff]" />
               <span className="text-[10px] font-mono font-extrabold tracking-widest uppercase">
                 {activeLabel}
               </span>
@@ -157,7 +157,7 @@ export default function CustomCursor() {
             >
               {/* Precision hotspot crosshair at (0, 0) */}
               <div className="absolute -top-1 -left-1 w-2.5 h-2.5 flex items-center justify-center pointer-events-none">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32] ring-2 ring-[#070709]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] ring-2 ring-[#171717]" />
               </div>
 
               {/* Clipped-corner folio tab body */}
@@ -172,14 +172,14 @@ export default function CustomCursor() {
                 {/* Folio polygon with chamfered top-right corner */}
                 <path
                   d="M1 1H17L23 7V27H1V1Z"
-                  fill="#0c0c14"
-                  stroke="#d4ff32"
+                  fill="#06110c"
+                  stroke="#a31c1b"
                   strokeWidth="1.5"
                 />
                 {/* Chamfer crease */}
                 <path
                   d="M17 1V7H23"
-                  stroke="#d4ff32"
+                  stroke="#a31c1b"
                   strokeWidth="1"
                   strokeOpacity="0.6"
                 />
@@ -188,7 +188,7 @@ export default function CustomCursor() {
                   x="12"
                   y="20"
                   textAnchor="middle"
-                  fill="#d4ff32"
+                  fill="#ffffff"
                   fontSize="11"
                   fontFamily="monospace"
                   fontWeight="bold"

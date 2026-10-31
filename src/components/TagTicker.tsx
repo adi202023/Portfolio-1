@@ -27,12 +27,12 @@ const tickerItems = [
 export default function TagTicker() {
   return (
     <aside
-      className="relative w-full py-5 border-y border-[#171722] bg-[#07070a]/90 backdrop-blur-sm overflow-hidden"
+      className="relative w-full py-5 border-y border-[#262626] bg-[#06110c]/90 backdrop-blur-sm overflow-hidden"
       aria-label="Core technologies and domains ticker"
     >
       {/* Soft gradient edge masks for smooth fade in/out */}
-      <div className="absolute left-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-r from-[#070709] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-l from-[#070709] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-r from-[#06110c] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-l from-[#06110c] to-transparent z-10 pointer-events-none" />
 
       {/* Track container with pause-on-hover and pause-on-focus-within */}
       <div className="flex w-full select-none overflow-hidden">
@@ -42,11 +42,11 @@ export default function TagTicker() {
             <a
               key={`ticker-1-${item.name}-${index}`}
               href="#skills"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f0f16] border border-[#20202e] text-xs font-mono text-[#a0a0b2] hover:text-[#d4ff32] hover:border-[#d4ff32]/50 hover:bg-[#14141f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-200"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#171717] border border-[#262626] text-xs font-mono text-[#9a9aab] hover:text-[#ffffff] hover:border-[#a31c1b] hover:bg-[#a31c1b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] transition-all duration-200 group"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32]/60" />
-              <span className="font-medium text-[#e2e2ec]">{item.name}</span>
-              <span className="text-[10px] text-[#616174] uppercase tracking-wider hidden sm:inline">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] group-hover:bg-[#ffffff] transition-colors" />
+              <span className="font-medium text-[#e2e2ec] group-hover:text-[#ffffff]">{item.name}</span>
+              <span className="text-[10px] text-[#707080] group-hover:text-white/80 uppercase tracking-wider hidden sm:inline">
                 {item.category}
               </span>
             </a>
@@ -57,13 +57,13 @@ export default function TagTicker() {
             <a
               key={`ticker-2-${item.name}-${index}`}
               href="#skills"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f0f16] border border-[#20202e] text-xs font-mono text-[#a0a0b2] hover:text-[#d4ff32] hover:border-[#d4ff32]/50 hover:bg-[#14141f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-200"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#171717] border border-[#262626] text-xs font-mono text-[#9a9aab] hover:text-[#ffffff] hover:border-[#a31c1b] hover:bg-[#a31c1b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] transition-all duration-200 group"
               aria-hidden="true"
               tabIndex={-1}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32]/60" />
-              <span className="font-medium text-[#e2e2ec]">{item.name}</span>
-              <span className="text-[10px] text-[#616174] uppercase tracking-wider hidden sm:inline">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] group-hover:bg-[#ffffff] transition-colors" />
+              <span className="font-medium text-[#e2e2ec] group-hover:text-[#ffffff]">{item.name}</span>
+              <span className="text-[10px] text-[#707080] group-hover:text-white/80 uppercase tracking-wider hidden sm:inline">
                 {item.category}
               </span>
             </a>

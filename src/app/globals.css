@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --bg: #070709;
-  --surface: #0e0e13;
-  --surface-subtle: #14141c;
-  --border: #21212c;
-  --border-subtle: #191924;
+  --bg: #171717;
+  --surface: #06110c;
+  --surface-subtle: #0d1f16;
+  --border: #262626;
+  --border-subtle: #1e1e1e;
   --text-main: #f4f4f7;
-  --text-muted: #8b8b9e;
-  --text-subtle: #565668;
-  --accent: #d4ff32;
-  --accent-muted: rgba(212, 255, 50, 0.12);
-  --accent-glow: rgba(212, 255, 50, 0.25);
+  --text-muted: #9a9aab;
+  --text-subtle: #6b7280;
+  --accent: #a31c1b;
+  --accent-hover: #bd2423;
+  --accent-muted: rgba(163, 28, 27, 0.15);
+  --accent-glow: rgba(163, 28, 27, 0.25);
 }
 
 * {
@@ -45,7 +46,7 @@ body {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #23232f;
+  background: #2b2b2b;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -60,7 +61,7 @@ body {
 
 /* Subtle architectural dot grid */
 .dot-grid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
@@ -79,17 +80,17 @@ body {
   letter-spacing: 0.02em;
   padding: 0.3rem 0.65rem;
   border-radius: 9999px;
-  background: #121218;
-  border: 1px solid #232330;
-  color: #a2a2b8;
+  background: #06110c;
+  border: 1px solid #14291e;
+  color: #c4c4cf;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .tech-badge:hover {
   border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(212, 255, 50, 0.06);
+  color: #ffffff;
+  background: var(--accent);
   transform: translateY(-1px);
 }
 
@@ -100,7 +101,7 @@ body {
   width: 550px;
   height: 550px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 255, 50, 0.04) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(163, 28, 27, 0.07) 0%, transparent 65%);
   transform: translate(-50%, -50%);
   z-index: 1;
   transition: opacity 0.4s ease;
@@ -128,35 +129,35 @@ body {
   animation-play-state: paused !important;
 }
 
-/* Stage Curtain Drapery Shading */
+/* Stage Curtain Drapery Shading - charcoal and green-black depth */
 .curtain-fabric-left {
   background: 
     linear-gradient(90deg, 
-      rgba(7,7,9,1) 0%, 
-      rgba(16,16,24,0.85) 15%, 
-      rgba(7,7,9,0.95) 30%, 
-      rgba(20,20,30,0.8) 45%, 
-      rgba(7,7,9,1) 60%, 
-      rgba(15,15,22,0.85) 75%, 
-      rgba(9,9,12,1) 90%, 
-      rgba(5,5,7,1) 100%
+      rgba(23,23,23,1) 0%, 
+      rgba(6,17,12,0.92) 15%, 
+      rgba(23,23,23,0.96) 30%, 
+      rgba(10,26,18,0.88) 45%, 
+      rgba(23,23,23,1) 60%, 
+      rgba(6,17,12,0.9) 75%, 
+      rgba(18,18,18,1) 90%, 
+      rgba(6,17,12,1) 100%
     );
-  box-shadow: inset -20px 0 40px rgba(0, 0, 0, 0.8);
+  box-shadow: inset -20px 0 40px rgba(0, 0, 0, 0.85);
 }
 
 .curtain-fabric-right {
   background: 
     linear-gradient(90deg, 
-      rgba(5,5,7,1) 0%, 
-      rgba(9,9,12,1) 10%, 
-      rgba(15,15,22,0.85) 25%, 
-      rgba(7,7,9,1) 40%, 
-      rgba(20,20,30,0.8) 55%, 
-      rgba(7,7,9,0.95) 70%, 
-      rgba(16,16,24,0.85) 85%, 
-      rgba(7,7,9,1) 100%
+      rgba(6,17,12,1) 0%, 
+      rgba(18,18,18,1) 10%, 
+      rgba(6,17,12,0.9) 25%, 
+      rgba(23,23,23,1) 40%, 
+      rgba(10,26,18,0.88) 55%, 
+      rgba(23,23,23,0.96) 70%, 
+      rgba(6,17,12,0.92) 85%, 
+      rgba(23,23,23,1) 100%
     );
-  box-shadow: inset 20px 0 40px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 20px 0 40px rgba(0, 0, 0, 0.85);
 }
 
 /* Custom Cursor Rules */

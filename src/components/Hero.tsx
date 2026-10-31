@@ -49,11 +49,11 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#232330] bg-[#0c0c12]/90 backdrop-blur-md shadow-sm"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#262626] bg-[#06110c]/90 backdrop-blur-md shadow-sm"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4ff32] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d4ff32]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a31c1b] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a31c1b]" />
               </span>
               <span className="font-mono text-[11px] uppercase tracking-wider text-[#a4a4b8]">
                 B.Tech CSE · Dayananda Sagar University
@@ -69,7 +69,7 @@ export default function Hero() {
             >
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#f4f4f7] leading-[1.05]">
                 Engineering{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff32] via-[#e5ff82] to-[#b8ec10]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e85d5c] via-[#bd2423] to-[#a31c1b]">
                   Intelligent
                 </span>{' '}
                 & Resilient Systems.
@@ -100,7 +100,7 @@ export default function Hero() {
                   e.preventDefault();
                   triggerTransition('#projects', 'SELECTED WORK');
                 }}
-                className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-md bg-[#d4ff32] text-[#070709] font-bold text-sm tracking-tight transition-all duration-200 hover:bg-[#e0ff54] hover:shadow-[0_0_24px_rgba(212,255,50,0.3)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-md bg-[#a31c1b] text-[#ffffff] font-bold text-sm tracking-tight transition-all duration-200 hover:bg-[#bd2423] hover:shadow-[0_0_24px_rgba(163,28,27,0.4)] hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
               >
                 <span>Explore Selected Work</span>
                 <ArrowDown size={15} className="transition-transform group-hover:translate-y-0.5" />
@@ -112,7 +112,7 @@ export default function Hero() {
                   e.preventDefault();
                   triggerTransition('#contact', 'CONTACT');
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md border border-[#262636] bg-[#0f0f16] text-[#e0e0ea] text-sm font-semibold hover:border-[#d4ff32] hover:text-[#d4ff32] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md border border-[#262626] bg-[#06110c] text-[#e0e0ea] text-sm font-semibold hover:border-[#a31c1b] hover:text-[#ffffff] hover:bg-[#171717] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
               >
                 <span>Discuss a Project</span>
                 <ArrowUpRight size={15} />
@@ -124,27 +124,27 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.32 }}
-              className="grid grid-cols-3 gap-6 pt-6 border-t border-[#1c1c28]"
+              className="grid grid-cols-3 gap-6 pt-6 border-t border-[#262626]"
             >
               <div className="group">
-                <div className="font-mono text-xl sm:text-2xl font-bold text-[#f4f4f7] flex items-center gap-1.5 group-hover:text-[#d4ff32] transition-colors">
-                  <ShieldCheck size={18} className="text-[#d4ff32]" />
+                <div className="font-mono text-xl sm:text-2xl font-bold text-[#f4f4f7] flex items-center gap-1.5 group-hover:text-[#a31c1b] transition-colors">
+                  <ShieldCheck size={18} className="text-[#a31c1b]" />
                   <span>Saarthi</span>
                 </div>
                 <p className="text-xs text-[#7e7e92] font-mono mt-0.5">Privacy Safety Infra</p>
               </div>
 
               <div className="group">
-                <div className="font-mono text-xl sm:text-2xl font-bold text-[#f4f4f7] flex items-center gap-1.5 group-hover:text-[#d4ff32] transition-colors">
-                  <Award size={18} className="text-[#d4ff32]" />
+                <div className="font-mono text-xl sm:text-2xl font-bold text-[#f4f4f7] flex items-center gap-1.5 group-hover:text-[#a31c1b] transition-colors">
+                  <Award size={18} className="text-[#a31c1b]" />
                   <span>1st Place</span>
                 </div>
                 <p className="text-xs text-[#7e7e92] font-mono mt-0.5">Bharat-ID Challenge</p>
               </div>
 
               <div className="group">
-                <div className="font-mono text-xl sm:text-2xl font-bold text-[#f4f4f7] flex items-center gap-1.5 group-hover:text-[#d4ff32] transition-colors">
-                  <Terminal size={18} className="text-[#d4ff32]" />
+                <div className="font-mono text-xl sm:text-2xl font-bold text-[#f4f4f7] flex items-center gap-1.5 group-hover:text-[#a31c1b] transition-colors">
+                  <Terminal size={18} className="text-[#a31c1b]" />
                   <span>IEEE RAS</span>
                 </div>
                 <p className="text-xs text-[#7e7e92] font-mono mt-0.5">Chapter Chair</p>
@@ -169,16 +169,16 @@ export default function Hero() {
                 rotateY,
                 transformStyle: 'preserve-3d',
               }}
-              className="relative mx-auto max-w-[340px] sm:max-w-[380px] p-4 rounded-xl border border-[#232332] bg-gradient-to-b from-[#111119] via-[#0b0b10] to-[#070709] shadow-2xl transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+              className="relative mx-auto max-w-[340px] sm:max-w-[380px] p-4 rounded-xl border border-[#14291e] bg-gradient-to-b from-[#06110c] via-[#0a1811] to-[#06110c] shadow-2xl transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
             >
               {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#d4ff32] rounded-tl-sm" />
-              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#d4ff32] rounded-tr-sm" />
-              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#d4ff32] rounded-bl-sm" />
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#d4ff32] rounded-br-sm" />
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#a31c1b] rounded-tl-sm" />
+              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#a31c1b] rounded-tr-sm" />
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#a31c1b] rounded-bl-sm" />
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#a31c1b] rounded-br-sm" />
 
               {/* Photo Box */}
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-[#161622] border border-[#20202e] group">
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-[#0a1811] border border-[#14291e] group">
                 <Image
                   src="/profile-photo.jpg"
                   alt="Aditya S. Sheregar"
@@ -187,15 +187,15 @@ export default function Hero() {
                   sizes="(max-width: 768px) 100vw, 380px"
                   className="object-cover object-top grayscale contrast-110 group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-transparent opacity-75 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06110c] via-transparent to-transparent opacity-75 pointer-events-none" />
 
                 {/* Overlaid Badges */}
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs font-mono">
-                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#070709]/80 border border-[#232332] backdrop-blur-md text-[#d4ff32] shadow-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32]" />
+                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#06110c]/90 border border-[#14291e] backdrop-blur-md text-[#a31c1b] shadow-sm font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b]" />
                     <span>AI-ML & Web</span>
                   </div>
-                  <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-[#070709]/80 border border-[#232332] text-[#8e8e9f]">
+                  <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-[#06110c]/90 border border-[#14291e] text-[#9a9aab]">
                     <MapPin size={11} />
                     <span>Bengaluru</span>
                   </div>
@@ -203,9 +203,9 @@ export default function Hero() {
               </div>
 
               {/* Telemetry caption */}
-              <div className="pt-4 px-1 flex items-center justify-between text-[11px] font-mono text-[#727284]">
+              <div className="pt-4 px-1 flex items-center justify-between text-[11px] font-mono text-[#8a8a9a]">
                 <span>CORE: Python · C++ · React</span>
-                <span className="text-[#d4ff32]">SYSTEM ACTIVE</span>
+                <span className="text-[#a31c1b] font-semibold">SYSTEM ACTIVE</span>
               </div>
             </motion.div>
           </motion.div>

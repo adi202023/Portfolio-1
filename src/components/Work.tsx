@@ -204,12 +204,12 @@ export default function Work() {
   ];
 
   return (
-    <section id="projects" className="py-16 sm:py-24 relative border-t border-[#181824]" aria-label="Projects Work Board">
+    <section id="projects" className="py-16 sm:py-24 relative border-t border-[#262626] bg-[#171717]" aria-label="Projects Work Board">
       <div className="max-w-6xl mx-auto px-6">
         {/* Board Header & Controls: Clean, connected, zero empty void */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-[#1b1b26]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-[#262626]">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#d4ff32]">
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#a31c1b] font-semibold">
               <Layers size={13} />
               <span>Project Work Board</span>
             </div>
@@ -218,14 +218,14 @@ export default function Work() {
               Systems Built for Reality.
             </h2>
 
-            <p className="text-xs sm:text-sm font-mono text-[#828294] max-w-xl leading-relaxed">
+            <p className="text-xs sm:text-sm font-mono text-[#8a8a9a] max-w-xl leading-relaxed">
               A curated catalog of verified production systems, security architectures, and distributed applications.
             </p>
           </div>
 
           {/* Board Domain Filters: placed beside or directly below header */}
           <div
-            className="flex flex-wrap items-center gap-1.5 p-1 rounded-lg bg-[#0e0e15] border border-[#1e1e2d] shadow-inner shrink-0"
+            className="flex flex-wrap items-center gap-1.5 p-1 rounded-lg bg-[#06110c] border border-[#14291e] shadow-inner shrink-0"
             role="tablist"
             aria-label="Filter projects by domain"
           >
@@ -237,10 +237,10 @@ export default function Work() {
                   onClick={() => setFilter(cat.id)}
                   role="tab"
                   aria-selected={isActive}
-                  className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                  className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] ${
                     isActive
-                      ? 'bg-[#181824] text-[#d4ff32] font-semibold border border-[#2a2a3e] shadow-sm'
-                      : 'text-[#828294] hover:text-[#e2e2ec]'
+                      ? 'bg-[#a31c1b] text-white font-semibold shadow-sm border border-[#bd2423]'
+                      : 'text-[#8a8a9a] hover:text-[#f4f4f7]'
                   }`}
                 >
                   {cat.label} ({cat.count})
@@ -253,13 +253,13 @@ export default function Work() {
         {/* Board Cards Stack: Shows project cards immediately beneath */}
         <div className="space-y-6 sm:space-y-8">
           {filteredProjects.length === 0 ? (
-            <div className="p-12 text-center rounded-xl border border-[#20202e] bg-[#0c0c13] space-y-3">
-              <p className="text-sm font-mono text-[#828294]">
+            <div className="p-12 text-center rounded-xl border border-[#14291e] bg-[#06110c] space-y-3">
+              <p className="text-sm font-mono text-[#8a8a9a]">
                 No projects found in this domain.
               </p>
               <button
                 onClick={() => setFilter('all')}
-                className="px-4 py-2 text-xs font-mono bg-[#d4ff32] text-[#070709] rounded-md font-bold hover:bg-[#e0ff54] transition-colors"
+                className="px-4 py-2 text-xs font-mono bg-[#a31c1b] text-white rounded-md font-bold hover:bg-[#bd2423] transition-colors"
               >
                 Reset to All Works ({projects.length})
               </button>
@@ -274,15 +274,15 @@ export default function Work() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.35, delay: index * 0.05, ease: [0.16, 1, 0.3, 1] }}
-                  className="group relative rounded-xl border border-[#20202e] bg-[#0c0c13] hover:border-[#383852] transition-all duration-300 p-6 sm:p-7 shadow-lg focus-within:border-[#d4ff32] focus-within:ring-1 focus-within:ring-[#d4ff32]/30"
+                  className="group relative rounded-xl border border-[#14291e] bg-[#06110c] hover:border-[#a31c1b]/50 transition-all duration-300 p-6 sm:p-7 shadow-lg focus-within:border-[#a31c1b] focus-within:ring-1 focus-within:ring-[#a31c1b]/30"
                 >
                 {/* Top Board Docket / Status Bar */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-[#1b1b28]">
+                <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-[#14291e]">
                   <div className="flex items-center gap-3 font-mono text-xs">
-                    <span className="font-bold text-[#d4ff32] px-2 py-0.5 rounded bg-[#161622] border border-[#242436]">
+                    <span className="font-bold text-white px-2 py-0.5 rounded bg-[#171717] border border-[#262626]">
                       {project.code}
                     </span>
-                    <span className="text-[#4b4b60]">/</span>
+                    <span className="text-[#3e5649]">/</span>
                     <span className="text-[#8c8ca0] uppercase tracking-wider hidden sm:inline">
                       {project.category}
                     </span>
@@ -290,12 +290,12 @@ export default function Work() {
 
                   <div className="flex items-center gap-2.5">
                     {project.badge && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-[#d4ff32]/10 border border-[#d4ff32]/30 text-[#d4ff32]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32]" />
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-[#a31c1b]/15 border border-[#a31c1b]/30 text-white">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b]" />
                         <span>{project.badge}</span>
                       </span>
                     )}
-                    <span className="px-2.5 py-1 rounded-full text-[11px] font-mono text-[#767688] bg-[#12121a] border border-[#20202e]">
+                    <span className="px-2.5 py-1 rounded-full text-[11px] font-mono text-[#8a8a9a] bg-[#171717] border border-[#262626]">
                       {project.status}
                     </span>
                   </div>
@@ -309,7 +309,7 @@ export default function Work() {
                       <h3 className="text-2xl sm:text-3xl font-extrabold text-[#f4f4f7] group-hover:text-white transition-colors tracking-tight">
                         {project.title}
                       </h3>
-                      <p className="text-xs sm:text-sm font-semibold text-[#d4ff32] font-mono mt-1">
+                      <p className="text-xs sm:text-sm font-semibold text-[#e05856] font-mono mt-1">
                         {project.subtitle}
                       </p>
                     </div>
@@ -319,8 +319,8 @@ export default function Work() {
                     </p>
 
                     {/* Architecture / Contribution Panel */}
-                    <div className="p-4 rounded-lg bg-[#11111a] border border-[#1f1f2e] space-y-1.5">
-                      <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#d4ff32] font-semibold">
+                    <div className="p-4 rounded-lg bg-[#0a1811] border border-[#14291e] space-y-1.5">
+                      <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-[#a31c1b] font-semibold">
                         <Terminal size={12} />
                         <span>Core Engineering & Contribution</span>
                       </div>
@@ -340,7 +340,7 @@ export default function Work() {
                       tabIndex={0}
                       data-cursor="view"
                       aria-label={`Open architecture details for ${project.title}`}
-                      className="relative rounded-lg overflow-hidden border border-[#222232] bg-[#0f0f18] p-4 cursor-pointer group/preview transition-all duration-300 hover:border-[#d4ff32]/50 hover:shadow-[0_0_24px_rgba(212,255,50,0.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      className="relative rounded-lg overflow-hidden border border-[#14291e] bg-[#0a1811] p-4 cursor-pointer group/preview transition-all duration-300 hover:border-[#a31c1b]/60 hover:shadow-[0_0_24px_rgba(163,28,27,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                     >
                       {/* Sliding mask overlay on load / reveal */}
                       <motion.div
@@ -348,32 +348,32 @@ export default function Work() {
                         whileInView={{ x: '102%' }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
-                        className="absolute inset-0 bg-[#0c0c13] z-20 pointer-events-none"
+                        className="absolute inset-0 bg-[#06110c] z-20 pointer-events-none"
                       />
 
                       {/* Schematic Display Content */}
                       <div className="space-y-3 font-mono text-[11px]">
-                        <div className="flex items-center justify-between text-[#78788c] border-b border-[#1b1b28] pb-2">
-                          <span className="flex items-center gap-1 text-[#d4ff32]">
+                        <div className="flex items-center justify-between text-[#8a8a9a] border-b border-[#14291e] pb-2">
+                          <span className="flex items-center gap-1 text-[#a31c1b] font-semibold">
                             <Cpu size={12} />
                             <span>{project.code} ARCHITECTURE</span>
                           </span>
-                          <span className="text-[10px] text-[#555566]">{project.telemetry}</span>
+                          <span className="text-[10px] text-[#6b6b7f]">{project.telemetry}</span>
                         </div>
 
                         {/* Visual Node Diagram Mockup */}
                         <div className="py-2 flex items-center justify-between gap-2 text-[#9999ab]">
-                          <div className="p-2 rounded bg-[#151522] border border-[#242436] flex-1 text-center truncate">
+                          <div className="p-2 rounded bg-[#06110c] border border-[#14291e] flex-1 text-center truncate">
                             <span className="text-[10px] text-[#6b6b7f] block">INGRESS</span>
                             <span className="text-[#e2e2ec] font-bold text-xs">{project.tech[0]}</span>
                           </div>
-                          <span className="text-[#d4ff32] font-bold">→</span>
-                          <div className="p-2 rounded bg-[#151522] border border-[#242436] flex-1 text-center truncate">
+                          <span className="text-[#a31c1b] font-bold">→</span>
+                          <div className="p-2 rounded bg-[#06110c] border border-[#14291e] flex-1 text-center truncate">
                             <span className="text-[10px] text-[#6b6b7f] block">CORE LOGIC</span>
                             <span className="text-[#e2e2ec] font-bold text-xs">{project.tech[1]}</span>
                           </div>
-                          <span className="text-[#d4ff32] font-bold">→</span>
-                          <div className="p-2 rounded bg-[#151522] border border-[#242436] flex-1 text-center truncate">
+                          <span className="text-[#a31c1b] font-bold">→</span>
+                          <div className="p-2 rounded bg-[#06110c] border border-[#14291e] flex-1 text-center truncate">
                             <span className="text-[10px] text-[#6b6b7f] block">PERSISTENCE</span>
                             <span className="text-[#e2e2ec] font-bold text-xs">{project.tech[2]}</span>
                           </div>
@@ -381,8 +381,8 @@ export default function Work() {
 
                         {/* Interactive Project Cue that slides in on hover/focus */}
                         <div className="pt-1 flex items-center justify-between">
-                          <span className="text-[10px] text-[#58586c]">CLICK TO INSPECT DOCKET</span>
-                          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#d4ff32]/10 border border-[#d4ff32]/30 text-[#d4ff32] font-bold text-[10px] tracking-wider transition-all duration-200 group-hover/preview:bg-[#d4ff32] group-hover/preview:text-[#070709]">
+                          <span className="text-[10px] text-[#707080]">CLICK TO INSPECT DOCKET</span>
+                          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#a31c1b]/20 border border-[#a31c1b]/40 text-white font-bold text-[10px] tracking-wider transition-all duration-200 group-hover/preview:bg-[#a31c1b] group-hover/preview:text-[#ffffff]">
                             <span>INSPECT DOCKET</span>
                             <ArrowRight size={11} className="transition-transform group-hover/preview:translate-x-0.5" />
                           </div>
@@ -392,7 +392,7 @@ export default function Work() {
 
                     {/* Tech Badges */}
                     <div>
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#66667a] block mb-2 font-semibold">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#8a8a9a] block mb-2 font-semibold">
                         Stack
                       </span>
                       <div className="flex flex-wrap gap-1.5">
@@ -411,7 +411,7 @@ export default function Work() {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-md bg-[#d4ff32] text-[#070709] hover:bg-[#e0ff54] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-md bg-[#a31c1b] text-[#ffffff] hover:bg-[#bd2423] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                           aria-label={`Visit live deployment of ${project.title}`}
                         >
                           <span>Live Demo</span>
@@ -423,7 +423,7 @@ export default function Work() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-md bg-[#161622] border border-[#272738] text-[#e0e0ea] hover:border-[#d4ff32] hover:text-[#d4ff32] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-md bg-[#171717] border border-[#262626] text-[#e0e0ea] hover:border-[#a31c1b] hover:text-[#ffffff] hover:bg-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                           aria-label={`View ${project.title} source on GitHub`}
                         >
                           <Github size={13} />
@@ -452,7 +452,7 @@ export default function Work() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               onClick={() => setSelectedProject(null)}
-              className="fixed inset-0 bg-[#07070a]/85 backdrop-blur-md"
+              className="fixed inset-0 bg-[#171717]/85 backdrop-blur-md"
               aria-hidden="true"
             />
 
@@ -465,22 +465,22 @@ export default function Work() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 16 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-3xl rounded-2xl border border-[#28283a] bg-[#0c0c13] p-6 sm:p-10 shadow-2xl z-10 space-y-6 max-h-[90vh] overflow-y-auto"
+              className="relative w-full max-w-3xl rounded-2xl border border-[#14291e] bg-[#06110c] p-6 sm:p-10 shadow-2xl z-10 space-y-6 max-h-[90vh] overflow-y-auto"
             >
               {/* Header Bar */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#1c1c28]">
+              <div className="flex items-center justify-between pb-4 border-b border-[#14291e]">
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-[#d4ff32] px-2.5 py-1 rounded bg-[#161624] border border-[#27273c]">
+                  <span className="font-mono text-xs font-bold text-white px-2.5 py-1 rounded bg-[#171717] border border-[#262626]">
                     {selectedProject.code}
                   </span>
-                  <span className="font-mono text-xs uppercase text-[#88889c]">
+                  <span className="font-mono text-xs uppercase text-[#8a8a9a]">
                     {selectedProject.category}
                   </span>
                 </div>
 
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-2 rounded-lg border border-[#20202e] text-[#8e8e9f] hover:text-[#f4f4f7] hover:border-[#d4ff32] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="p-2 rounded-lg border border-[#262626] bg-[#171717] text-[#9a9aab] hover:text-white hover:border-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                   aria-label="Close project modal"
                 >
                   <X size={18} />
@@ -492,7 +492,7 @@ export default function Work() {
                 <h3 id="modal-title" className="text-2xl sm:text-4xl font-extrabold text-[#f4f4f7] tracking-tight">
                   {selectedProject.title}
                 </h3>
-                <p className="text-sm font-semibold text-[#d4ff32] font-mono mt-1">
+                <p className="text-sm font-semibold text-[#e05856] font-mono mt-1">
                   {selectedProject.subtitle}
                 </p>
               </div>
@@ -502,15 +502,15 @@ export default function Work() {
               </p>
 
               {/* Architectural Pipelines */}
-              <div className="space-y-3 p-5 rounded-xl bg-[#111119] border border-[#1e1e2d]">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#d4ff32] font-semibold flex items-center gap-2">
+              <div className="space-y-3 p-5 rounded-xl bg-[#0a1811] border border-[#14291e]">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#a31c1b] font-semibold flex items-center gap-2">
                   <Cpu size={14} />
                   <span>Architectural Pipelines & Specifications</span>
                 </span>
                 <ul className="space-y-2 text-xs sm:text-sm text-[#a8a8bc]">
                   {selectedProject.architectureDetails.map((detail, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <span className="font-mono text-[10px] text-[#d4ff32] font-bold mt-0.5">0{idx + 1}</span>
+                      <span className="font-mono text-[10px] text-[#a31c1b] font-bold mt-0.5">0{idx + 1}</span>
                       <span>{detail}</span>
                     </li>
                   ))}
@@ -518,15 +518,15 @@ export default function Work() {
               </div>
 
               {/* Security & Integrity Guarantees */}
-              <div className="space-y-3 p-5 rounded-xl bg-[#111119] border border-[#1e1e2d]">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#d4ff32] font-semibold flex items-center gap-2">
+              <div className="space-y-3 p-5 rounded-xl bg-[#0a1811] border border-[#14291e]">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#a31c1b] font-semibold flex items-center gap-2">
                   <ShieldCheck size={14} />
                   <span>Security & Resilience Guarantees</span>
                 </span>
                 <ul className="space-y-2 text-xs sm:text-sm text-[#a8a8bc]">
                   {selectedProject.securityGuarantees.map((guarantee, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={14} className="text-[#d4ff32] shrink-0 mt-0.5" />
+                      <CheckCircle2 size={14} className="text-[#a31c1b] shrink-0 mt-0.5" />
                       <span>{guarantee}</span>
                     </li>
                   ))}
@@ -534,7 +534,7 @@ export default function Work() {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#1c1c28]">
+              <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#14291e]">
                 <div className="flex flex-wrap gap-1.5">
                   {selectedProject.tech.map((t) => (
                     <span key={t} className="tech-badge">
@@ -549,7 +549,7 @@ export default function Work() {
                       href={selectedProject.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#d4ff32] text-[#070709] font-bold text-xs hover:bg-[#e0ff54] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#a31c1b] text-white font-bold text-xs hover:bg-[#bd2423] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                     >
                       <span>Launch Live App</span>
                       <ExternalLink size={13} />
@@ -560,7 +560,7 @@ export default function Work() {
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#161624] border border-[#28283c] text-[#e0e0ea] hover:border-[#d4ff32] hover:text-[#d4ff32] transition-colors text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#171717] border border-[#262626] text-[#e0e0ea] hover:border-[#a31c1b] hover:text-white hover:bg-[#a31c1b] transition-colors text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                     >
                       <Github size={14} />
                       <span>Source Repository</span>

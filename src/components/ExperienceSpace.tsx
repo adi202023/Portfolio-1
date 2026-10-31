@@ -402,7 +402,7 @@ export default function ExperienceSpace() {
         role="dialog"
         aria-modal="true"
         aria-label="Backstage Field Archive: Experience and Skills"
-        className="fixed inset-0 z-[250] overflow-y-auto bg-[#050508] text-[#f4f4f7] selection:bg-[#d4ff32] selection:text-[#070709]"
+        className="fixed inset-0 z-[250] overflow-y-auto bg-[#06110c] text-[#f4f4f7] selection:bg-[#a31c1b] selection:text-white"
       >
         {/* Stage Door Entrance Light Beam Sweep */}
         {transitioning && (
@@ -410,19 +410,19 @@ export default function ExperienceSpace() {
             initial={{ scaleX: 0, opacity: 1 }}
             animate={{ scaleX: 1, opacity: [1, 0.8, 0] }}
             transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[280] bg-gradient-to-r from-transparent via-[#d4ff32]/25 to-transparent pointer-events-none"
+            className="fixed inset-0 z-[280] bg-gradient-to-r from-transparent via-[#a31c1b]/30 to-transparent pointer-events-none"
           />
         )}
 
         {/* Backstage Header Bar */}
-        <header className="sticky top-0 z-40 bg-[#07070b]/90 backdrop-blur-xl border-b border-[#1c1c2b] px-6 py-4 flex items-center justify-between">
+        <header className="sticky top-0 z-40 bg-[#06110c]/90 backdrop-blur-xl border-b border-[#14291e] px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="w-2 h-2 rounded-full bg-[#d4ff32] animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-[#a31c1b] animate-ping" />
             <div className="flex flex-col">
-              <span className="text-xs font-mono font-bold tracking-wider text-[#d4ff32] uppercase">
+              <span className="text-xs font-mono font-bold tracking-wider text-[#a31c1b] uppercase">
                 STAGE DOOR // BACKSTAGE FIELD ARCHIVE
               </span>
-              <span className="text-[11px] font-mono text-[#78788c] hidden sm:block">
+              <span className="text-[11px] font-mono text-[#8a8a9a] hidden sm:block">
                 Aditya S. Sheregar · Verified Operations, Roles &amp; Competencies
               </span>
             </div>
@@ -432,12 +432,12 @@ export default function ExperienceSpace() {
           <div className="flex items-center gap-3">
             <button
               onClick={closeSpace}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#141420] border border-[#2b2b3e] text-[#e2e2ec] hover:border-[#d4ff32] hover:text-[#d4ff32] text-xs font-mono transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#171717] border border-[#262626] text-[#e2e2ec] hover:border-[#a31c1b] hover:text-white hover:bg-[#a31c1b] text-xs font-mono transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
               aria-label="Return to Main Folio Stage"
             >
               <ArrowLeft size={13} />
               <span>Return to Stage</span>
-              <kbd className="hidden md:inline-block px-1.5 py-0.2 rounded bg-[#1f1f2e] text-[10px] text-[#86869a]">
+              <kbd className="hidden md:inline-block px-1.5 py-0.2 rounded bg-[#262626] text-[10px] text-[#86869a]">
                 ESC
               </kbd>
             </button>
@@ -448,7 +448,7 @@ export default function ExperienceSpace() {
         <div className="max-w-6xl mx-auto px-6 py-10 sm:py-16">
           {/* Section Introduction */}
           <div className="mb-10 space-y-2">
-            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#d4ff32]">
+            <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-[#a31c1b] font-semibold">
               <span>[ Backstage Dossier ]</span>
               <span>{'//'}</span>
               <span>Interactive Field Guide</span>
@@ -465,7 +465,7 @@ export default function ExperienceSpace() {
           <div
             role="tablist"
             aria-label="Archive Categories"
-            className="flex flex-wrap gap-2 p-1.5 rounded-xl bg-[#0d0d16] border border-[#1e1e2d] mb-10"
+            className="flex flex-wrap gap-2 p-1.5 rounded-xl bg-[#0a1811] border border-[#14291e] mb-10"
           >
             {[
               { id: 'events', label: 'Events & Hackathons', count: eventsData.length, icon: Calendar },
@@ -480,16 +480,16 @@ export default function ExperienceSpace() {
                   role="tab"
                   aria-selected={isActive}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-lg text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                  className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-lg text-xs font-mono transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] ${
                     isActive
-                      ? 'text-[#070709] font-bold'
-                      : 'text-[#9292a4] hover:text-[#f4f4f7] hover:bg-[#141420]'
+                      ? 'text-white font-bold'
+                      : 'text-[#8a8a9a] hover:text-[#f4f4f7] hover:bg-[#14291e]'
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="archive-tab-pill"
-                      className="absolute inset-0 bg-[#d4ff32] rounded-lg -z-10 shadow-[0_0_20px_rgba(212,255,50,0.3)]"
+                      className="absolute inset-0 bg-[#a31c1b] rounded-lg -z-10 shadow-[0_0_20px_rgba(163,28,27,0.35)]"
                       transition={{ type: 'spring', stiffness: 450, damping: 32 }}
                     />
                   )}
@@ -497,7 +497,7 @@ export default function ExperienceSpace() {
                   <span>{tab.label}</span>
                   <span
                     className={`text-[10px] px-1.5 py-0.5 rounded ${
-                      isActive ? 'bg-[#070709]/20 text-[#070709]' : 'bg-[#181824] text-[#6d6d82]'
+                      isActive ? 'bg-[#06110c]/40 text-white' : 'bg-[#171717] text-[#8a8a9a]'
                     }`}
                   >
                     {tab.count}
@@ -518,22 +518,22 @@ export default function ExperienceSpace() {
                     <button
                       key={item.id}
                       onClick={() => setSelectedItemId(item.id)}
-                      className={`text-left p-4 sm:p-5 rounded-xl border transition-all duration-200 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                      className={`text-left p-4 sm:p-5 rounded-xl border transition-all duration-200 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] ${
                         isSelected
-                          ? 'bg-[#11111b] border-[#d4ff32]/60 shadow-[0_4px_24px_rgba(0,0,0,0.6)]'
-                          : 'bg-[#09090f] border-[#181824] hover:border-[#282838] hover:bg-[#0e0e16]'
+                          ? 'bg-[#0a1811] border-[#a31c1b]/60 shadow-[0_4px_24px_rgba(0,0,0,0.6)]'
+                          : 'bg-[#06110c] border-[#14291e] hover:border-[#1e3b2b] hover:bg-[#0a1811]'
                       }`}
                     >
                       {isSelected && (
                         <motion.div
                           layoutId="archive-item-active-border"
-                          className="absolute inset-0 border-2 border-[#d4ff32] rounded-xl pointer-events-none"
+                          className="absolute inset-0 border-2 border-[#a31c1b] rounded-xl pointer-events-none"
                           transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                         />
                       )}
 
-                      <div className="flex items-center justify-between gap-2 text-[10px] font-mono text-[#76768a] mb-1.5">
-                        <span className="flex items-center gap-1.5 text-[#d4ff32] font-semibold">
+                      <div className="flex items-center justify-between gap-2 text-[10px] font-mono text-[#8a8a9a] mb-1.5">
+                        <span className="flex items-center gap-1.5 text-[#a31c1b] font-semibold">
                           <span>0{idx + 1}</span>
                           <span>{'//'}</span>
                           <span className="uppercase">{item.badge}</span>
@@ -549,21 +549,21 @@ export default function ExperienceSpace() {
                         {item.title}
                       </h3>
 
-                      <p className="text-xs text-[#707084] font-mono mt-1 line-clamp-1">
+                      <p className="text-xs text-[#8a8a9a] font-mono mt-1 line-clamp-1">
                         {item.organization}
                       </p>
 
                       {/* Applied skills preview */}
-                      <div className="mt-3 flex items-center justify-between pt-2.5 border-t border-[#161622] text-[11px] font-mono">
-                        <span className="text-[#55556a] truncate max-w-[80%]">
+                      <div className="mt-3 flex items-center justify-between pt-2.5 border-t border-[#14291e] text-[11px] font-mono">
+                        <span className="text-[#646478] truncate max-w-[80%]">
                           {item.skillsUsed.slice(0, 3).join(' · ')}
                         </span>
                         <ChevronRight
                           size={13}
                           className={`transition-transform ${
                             isSelected
-                              ? 'text-[#d4ff32] translate-x-0.5'
-                              : 'text-[#484858] group-hover:translate-x-0.5'
+                              ? 'text-[#a31c1b] translate-x-0.5'
+                              : 'text-[#485848] group-hover:translate-x-0.5'
                           }`}
                         />
                       </div>
@@ -581,23 +581,23 @@ export default function ExperienceSpace() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -12 }}
                     transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                    className="bg-[#0b0b12] border border-[#222234] rounded-xl p-6 sm:p-8 shadow-2xl relative overflow-hidden"
+                    className="bg-[#0a1811] border border-[#14291e] rounded-xl p-6 sm:p-8 shadow-2xl relative overflow-hidden"
                   >
-                    <span className="absolute top-3 right-3 text-[10px] font-mono text-[#404054]">
+                    <span className="absolute top-3 right-3 text-[10px] font-mono text-[#3e5649]">
                       + ARCHIVE RECORD
                     </span>
 
                     {/* Metadata Header */}
                     <div className="space-y-2 mb-6">
                       <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                        <span className="px-2.5 py-1 rounded bg-[#161622] border border-[#2b2b3e] text-[#d4ff32] font-semibold">
+                        <span className="px-2.5 py-1 rounded bg-[#171717] border border-[#262626] text-[#a31c1b] font-semibold">
                           {activeArchiveItem.badge}
                         </span>
-                        <span className="text-[#646478] flex items-center gap-1">
+                        <span className="text-[#8a8a9a] flex items-center gap-1">
                           <Calendar size={12} />
                           <span>{activeArchiveItem.period}</span>
                         </span>
-                        <span className="text-[#646478] flex items-center gap-1">
+                        <span className="text-[#8a8a9a] flex items-center gap-1">
                           <MapPin size={12} />
                           <span>{activeArchiveItem.location}</span>
                         </span>
@@ -607,26 +607,26 @@ export default function ExperienceSpace() {
                         {activeArchiveItem.title}
                       </h2>
 
-                      <p className="text-xs sm:text-sm font-mono text-[#d4ff32]">
+                      <p className="text-xs sm:text-sm font-mono text-[#e05856]">
                         {activeArchiveItem.organization}
                       </p>
                     </div>
 
                     {/* Narrative Summary */}
-                    <p className="text-xs sm:text-sm text-[#a2a2b6] leading-relaxed mb-6 pb-6 border-b border-[#181826]">
+                    <p className="text-xs sm:text-sm text-[#a2a2b6] leading-relaxed mb-6 pb-6 border-b border-[#14291e]">
                       {activeArchiveItem.summary}
                     </p>
 
                     {/* Verified Responsibilities */}
                     <div className="space-y-3 mb-6">
-                      <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#d4ff32] font-semibold flex items-center gap-2">
+                      <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#a31c1b] font-semibold flex items-center gap-2">
                         <Sparkles size={12} />
                         <span>Verified Responsibilities &amp; Outcomes</span>
                       </h4>
                       <ul className="space-y-2.5">
                         {activeArchiveItem.responsibilities.map((resp, i) => (
                           <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#9292a6] leading-relaxed">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff32] mt-1.5 shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] mt-1.5 shrink-0" />
                             <span>{resp}</span>
                           </li>
                         ))}
@@ -634,10 +634,10 @@ export default function ExperienceSpace() {
                     </div>
 
                     {/* BIDIRECTIONAL CROSS-LINK: Interactive Applied Skills */}
-                    <div className="space-y-3 pt-6 border-t border-[#181826]">
+                    <div className="space-y-3 pt-6 border-t border-[#14291e]">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#727286] flex items-center gap-1.5">
-                          <LinkIcon size={12} className="text-[#d4ff32]" />
+                        <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#8a8a9a] flex items-center gap-1.5 font-semibold">
+                          <LinkIcon size={12} className="text-[#a31c1b]" />
                           <span>Applied Skills (Click to Cross-Reference)</span>
                         </h4>
                       </div>
@@ -646,11 +646,11 @@ export default function ExperienceSpace() {
                           <button
                             key={skill}
                             onClick={() => navigateToSkill(skill)}
-                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#12121e] border border-[#26263a] text-xs font-mono text-[#e0e0ee] hover:border-[#d4ff32] hover:text-[#d4ff32] hover:bg-[#161626] transition-all group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#06110c] border border-[#14291e] text-xs font-mono text-[#e0e0ee] hover:border-[#a31c1b] hover:text-white hover:bg-[#a31c1b] transition-all group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#a31c1b]"
                             title={`Inspect ${skill} in Skills Archive`}
                           >
                             <span>{skill}</span>
-                            <span className="text-[10px] text-[#d4ff32] opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span className="text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity">
                               →
                             </span>
                           </button>
@@ -660,12 +660,12 @@ export default function ExperienceSpace() {
 
                     {/* External Link */}
                     {activeArchiveItem.externalLink && (
-                      <div className="mt-6 pt-5 border-t border-[#181826] flex justify-end">
+                      <div className="mt-6 pt-5 border-t border-[#14291e] flex justify-end">
                         <a
                           href={activeArchiveItem.externalLink.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#d4ff32] text-[#070709] font-mono font-bold text-xs hover:bg-[#e2ff5b] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                          className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#a31c1b] text-white font-mono font-bold text-xs hover:bg-[#bd2423] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
                         >
                           <span>{activeArchiveItem.externalLink.label}</span>
                           <ExternalLink size={13} />
@@ -689,22 +689,22 @@ export default function ExperienceSpace() {
                     <button
                       key={item.id}
                       onClick={() => setSelectedSkillId(item.id)}
-                      className={`text-left p-4 sm:p-5 rounded-xl border transition-all duration-200 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                      className={`text-left p-4 sm:p-5 rounded-xl border transition-all duration-200 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] ${
                         isSelected
-                          ? 'bg-[#11111b] border-[#d4ff32]/60 shadow-[0_4px_24px_rgba(0,0,0,0.6)]'
-                          : 'bg-[#09090f] border-[#181824] hover:border-[#282838] hover:bg-[#0e0e16]'
+                          ? 'bg-[#0a1811] border-[#a31c1b]/60 shadow-[0_4px_24px_rgba(0,0,0,0.6)]'
+                          : 'bg-[#06110c] border-[#14291e] hover:border-[#1e3b2b] hover:bg-[#0a1811]'
                       }`}
                     >
                       {isSelected && (
                         <motion.div
                           layoutId="skill-item-active-border"
-                          className="absolute inset-0 border-2 border-[#d4ff32] rounded-xl pointer-events-none"
+                          className="absolute inset-0 border-2 border-[#a31c1b] rounded-xl pointer-events-none"
                           transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                         />
                       )}
 
-                      <div className="flex items-center justify-between gap-2 text-[10px] font-mono text-[#76768a] mb-1.5">
-                        <span className="flex items-center gap-1.5 text-[#d4ff32] font-semibold">
+                      <div className="flex items-center justify-between gap-2 text-[10px] font-mono text-[#8a8a9a] mb-1.5">
+                        <span className="flex items-center gap-1.5 text-[#a31c1b] font-semibold">
                           <span>0{idx + 1}</span>
                           <span>{'//'}</span>
                           <span className="uppercase">{item.domain}</span>
@@ -720,16 +720,16 @@ export default function ExperienceSpace() {
                         {item.title}
                       </h3>
 
-                      <div className="mt-3 flex items-center justify-between pt-2.5 border-t border-[#161622] text-[11px] font-mono">
-                        <span className="text-[#55556a] truncate max-w-[80%]">
+                      <div className="mt-3 flex items-center justify-between pt-2.5 border-t border-[#14291e] text-[11px] font-mono">
+                        <span className="text-[#646478] truncate max-w-[80%]">
                           {item.skills.slice(0, 3).join(' · ')}
                         </span>
                         <ChevronRight
                           size={13}
                           className={`transition-transform ${
                             isSelected
-                              ? 'text-[#d4ff32] translate-x-0.5'
-                              : 'text-[#484858] group-hover:translate-x-0.5'
+                              ? 'text-[#a31c1b] translate-x-0.5'
+                              : 'text-[#485848] group-hover:translate-x-0.5'
                           }`}
                         />
                       </div>
@@ -747,19 +747,19 @@ export default function ExperienceSpace() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -12 }}
                     transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                    className="bg-[#0b0b12] border border-[#222234] rounded-xl p-6 sm:p-8 shadow-2xl relative overflow-hidden"
+                    className="bg-[#0a1811] border border-[#14291e] rounded-xl p-6 sm:p-8 shadow-2xl relative overflow-hidden"
                   >
-                    <span className="absolute top-3 right-3 text-[10px] font-mono text-[#404054]">
+                    <span className="absolute top-3 right-3 text-[10px] font-mono text-[#3e5649]">
                       + COMPETENCY DOSSIER
                     </span>
 
                     {/* Metadata Header */}
                     <div className="space-y-2 mb-6">
                       <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                        <span className="px-2.5 py-1 rounded bg-[#161622] border border-[#2b2b3e] text-[#d4ff32] font-semibold">
+                        <span className="px-2.5 py-1 rounded bg-[#171717] border border-[#262626] text-[#a31c1b] font-semibold">
                           {activeSkillItem.badge}
                         </span>
-                        <span className="text-[#646478]">{activeSkillItem.domain}</span>
+                        <span className="text-[#8a8a9a]">{activeSkillItem.domain}</span>
                       </div>
 
                       <h2 className="text-2xl sm:text-3xl font-extrabold text-[#f4f4f7] tracking-tight">
@@ -768,20 +768,20 @@ export default function ExperienceSpace() {
                     </div>
 
                     {/* Narrative Summary */}
-                    <p className="text-xs sm:text-sm text-[#a2a2b6] leading-relaxed mb-6 pb-6 border-b border-[#181826]">
+                    <p className="text-xs sm:text-sm text-[#a2a2b6] leading-relaxed mb-6 pb-6 border-b border-[#14291e]">
                       {activeSkillItem.summary}
                     </p>
 
                     {/* Verified Tools in this Cluster */}
                     <div className="space-y-3 mb-6">
-                      <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#727286]">
+                      <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#8a8a9a] font-semibold">
                         Verified Technologies in this Cluster
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {activeSkillItem.skills.map((sk) => (
                           <span
                             key={sk}
-                            className="px-3 py-1.5 rounded-md bg-[#131320] border border-[#242436] text-xs font-mono text-[#dcdce8]"
+                            className="px-3 py-1.5 rounded-md bg-[#06110c] border border-[#14291e] text-xs font-mono text-[#dcdce8]"
                           >
                             {sk}
                           </span>
@@ -790,8 +790,8 @@ export default function ExperienceSpace() {
                     </div>
 
                     {/* BIDIRECTIONAL CROSS-LINK: Demonstrated In Works & Roles */}
-                    <div className="space-y-3 pt-6 border-t border-[#181826]">
-                      <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#d4ff32] font-semibold flex items-center gap-2">
+                    <div className="space-y-3 pt-6 border-t border-[#14291e]">
+                      <h4 className="text-[11px] font-mono uppercase tracking-widest text-[#a31c1b] font-semibold flex items-center gap-2">
                         <LinkIcon size={12} />
                         <span>Demonstrated In (Click to Jump to Record)</span>
                       </h4>
@@ -800,10 +800,10 @@ export default function ExperienceSpace() {
                           <button
                             key={idx}
                             onClick={() => navigateToExperience(demo.targetTab, demo.itemId)}
-                            className="w-full text-left p-3.5 rounded-lg bg-[#101018] border border-[#1e1e2c] hover:border-[#d4ff32] transition-colors group flex items-start justify-between gap-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                            className="w-full text-left p-3.5 rounded-lg bg-[#06110c] border border-[#14291e] hover:border-[#a31c1b] transition-colors group flex items-start justify-between gap-3 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#a31c1b]"
                           >
                             <div className="space-y-1">
-                              <span className="text-xs font-mono font-bold text-[#f4f4f7] group-hover:text-[#d4ff32] transition-colors flex items-center gap-1.5">
+                              <span className="text-xs font-mono font-bold text-[#f4f4f7] group-hover:text-[#a31c1b] transition-colors flex items-center gap-1.5">
                                 <span>{demo.title}</span>
                                 <span className="text-[10px] text-[#646476] uppercase">
                                   [{demo.targetTab}]
@@ -813,7 +813,7 @@ export default function ExperienceSpace() {
                                 {demo.note}
                               </p>
                             </div>
-                            <span className="text-xs font-mono text-[#d4ff32] shrink-0 mt-1">
+                            <span className="text-xs font-mono text-[#a31c1b] font-semibold shrink-0 mt-1">
                               View →
                             </span>
                           </button>

@@ -18,7 +18,7 @@ export default function Home() {
       <FolioReveal />
       <CustomCursor />
       <ExperienceSpace />
-      <div className="relative min-h-screen bg-[#070709] text-[#e8e8ed] selection:bg-[#d4ff32] selection:text-[#070709]">
+      <div className="relative min-h-screen bg-[#171717] text-[#e8e8ed] selection:bg-[#a31c1b] selection:text-[#ffffff]">
         <Navbar />
         <main>
           <Hero />

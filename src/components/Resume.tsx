@@ -36,33 +36,33 @@ function TimelineItem({
       className="relative pl-10 pb-10 last:pb-0"
     >
       {/* Vertical track */}
-      <span className="absolute left-[15px] top-8 bottom-0 w-px bg-[#181824] last:hidden" aria-hidden="true" />
+      <span className="absolute left-[15px] top-8 bottom-0 w-px bg-[#14291e] last:hidden" aria-hidden="true" />
 
       {/* Icon node */}
-      <span className="absolute left-0 top-0 w-8 h-8 rounded-sm bg-[#101017] border border-[#21212d] flex items-center justify-center text-[#d4ff32]">
+      <span className="absolute left-0 top-0 w-8 h-8 rounded-sm bg-[#171717] border border-[#262626] flex items-center justify-center text-[#a31c1b]">
         {icon}
       </span>
 
-      <div className="bg-[#09090e] border border-[#181824] rounded-sm p-5 hover:border-[#2a2a3a] transition-colors group">
+      <div className="bg-[#0a1811] border border-[#14291e] rounded-sm p-5 hover:border-[#1e3b2b] transition-colors group">
         <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
           <div>
-            <span className="text-[10px] font-mono text-[#d4ff32] uppercase tracking-widest block mb-1">
+            <span className="text-[10px] font-mono text-[#a31c1b] uppercase tracking-widest block mb-1 font-semibold">
               {label}
             </span>
             <h3 className="text-sm font-semibold text-[#f4f4f7] leading-tight">{title}</h3>
             {subtitle && (
-              <p className="text-xs text-[#78788a] font-mono mt-0.5">{subtitle}</p>
+              <p className="text-xs text-[#8a8a9a] font-mono mt-0.5">{subtitle}</p>
             )}
           </div>
-          <span className="text-[11px] font-mono text-[#5a5a6e] border border-[#1e1e2a] px-2 py-0.5 rounded-sm shrink-0">
+          <span className="text-[11px] font-mono text-[#78788a] border border-[#14291e] px-2 py-0.5 rounded-sm shrink-0">
             {date}
           </span>
         </div>
         {bullets && bullets.length > 0 && (
-          <ul className="space-y-1.5 mt-3 border-t border-[#131320] pt-3">
+          <ul className="space-y-1.5 mt-3 border-t border-[#14291e] pt-3">
             {bullets.map((b, i) => (
               <li key={i} className="flex gap-2 text-xs text-[#868698] leading-relaxed">
-                <span className="text-[#d4ff32] mt-0.5 shrink-0">·</span>
+                <span className="text-[#a31c1b] mt-0.5 shrink-0 font-bold">·</span>
                 <span>{b}</span>
               </li>
             ))}
@@ -80,24 +80,24 @@ export default function Resume() {
   return (
     <section
       id="resume"
-      className="border-t border-[#181824] bg-[#09090e] py-24 px-6"
+      className="border-t border-[#14291e] bg-[#06110c] py-24 px-6"
       aria-label="Resume"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-[11px] font-mono text-[#d4ff32] uppercase tracking-widest">
+            <span className="text-[11px] font-mono text-[#a31c1b] uppercase tracking-widest font-semibold">
               06 // Professional Record
             </span>
-            <span className="h-px flex-1 max-w-[60px] bg-[#d4ff32]/30" />
+            <span className="h-px flex-1 max-w-[60px] bg-[#a31c1b]/30" />
           </div>
           <MaskReveal>
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-extrabold leading-none tracking-tight text-[#f4f4f7]">
               Resume
             </h2>
           </MaskReveal>
-          <p className="mt-4 text-sm text-[#78788a] max-w-lg leading-relaxed">
+          <p className="mt-4 text-sm text-[#8a8a9a] max-w-lg leading-relaxed">
             AI &amp; ML Engineering student building intelligent systems and full-stack web applications.
             Focused on clean architecture, optimization, and continuous learning.
           </p>
@@ -121,9 +121,9 @@ export default function Resume() {
             />
 
             {/* Backstage Field Archive Connection Card */}
-            <div className="p-6 rounded-sm bg-[#0c0c14] border border-[#222234] space-y-3">
+            <div className="p-6 rounded-sm bg-[#0a1811] border border-[#14291e] space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono text-[#d4ff32] uppercase tracking-widest font-semibold">
+                <span className="text-[10px] font-mono text-[#a31c1b] uppercase tracking-widest font-semibold">
                   Field Operations &amp; Leadership Record
                 </span>
                 <span className="text-[10px] font-mono text-[#6c6c80]">INTERACTIVE ARCHIVE</span>
@@ -137,7 +137,7 @@ export default function Resume() {
               <button
                 onClick={() => window.dispatchEvent(new CustomEvent('open-experience-space'))}
                 data-cursor="enter"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded bg-[#161624] border border-[#2c2c40] text-[#d4ff32] hover:bg-[#d4ff32] hover:text-[#070709] transition-all text-xs font-mono font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded bg-[#171717] border border-[#262626] text-[#ffffff] hover:bg-[#a31c1b] hover:text-[#ffffff] hover:border-[#a31c1b] transition-all text-xs font-mono font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
               >
                 <span>Step Behind the Stage Door →</span>
               </button>
@@ -150,24 +150,24 @@ export default function Resume() {
               initial={{ opacity: 0, y: 20 }}
               animate={panelInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.55, ease: EASE, delay: 0.15 }}
-              className="bg-[#070709] border border-[#1c1c28] rounded-sm overflow-hidden"
+              className="bg-[#171717] border border-[#262626] rounded-sm overflow-hidden"
             >
               {/* Panel header */}
-              <div className="px-6 pt-6 pb-5 border-b border-[#141420]">
-                <p className="text-[10px] font-mono text-[#d4ff32] uppercase tracking-widest mb-2">
+              <div className="px-6 pt-6 pb-5 border-b border-[#262626]">
+                <p className="text-[10px] font-mono text-[#a31c1b] uppercase tracking-widest mb-2 font-semibold">
                   Document
                 </p>
                 <h3 className="text-base font-bold text-[#f4f4f7] leading-tight">
                   Aditya S. Sheregar
                 </h3>
-                <p className="text-xs text-[#78788a] font-mono mt-1">
+                <p className="text-xs text-[#8a8a9a] font-mono mt-1">
                   AI-ML Engineer · Full Stack Developer
                 </p>
               </div>
 
               {/* Skills summary */}
-              <div className="px-6 py-5 border-b border-[#141420] space-y-3">
-                <p className="text-[10px] font-mono text-[#5a5a6e] uppercase tracking-wider">Core Skills</p>
+              <div className="px-6 py-5 border-b border-[#262626] space-y-3">
+                <p className="text-[10px] font-mono text-[#6c6c80] uppercase tracking-wider">Core Skills</p>
                 <div className="flex flex-wrap gap-2">
                   {[
                     'Python', 'C / C++', 'Java',
@@ -191,7 +191,7 @@ export default function Resume() {
                 <a
                   href="/resume.pdf"
                   download="Aditya_Sheregar_Resume.pdf"
-                  className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#d4ff32] text-[#070709] font-bold text-xs font-mono tracking-wider rounded-sm hover:bg-[#e8ff6b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4ff32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#070709]"
+                  className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-[#a31c1b] text-[#ffffff] font-bold text-xs font-mono tracking-wider rounded-sm hover:bg-[#bd2423] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] focus-visible:ring-offset-2 focus-visible:ring-offset-[#171717]"
                 >
                   <Download size={14} />
                   Download Resume
@@ -200,7 +200,7 @@ export default function Resume() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-transparent border border-[#292938] text-[#c4c4d4] font-mono text-xs tracking-wider rounded-sm hover:border-[#d4ff32] hover:text-[#d4ff32] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4ff32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#070709]"
+                  className="inline-flex items-center justify-center gap-2 w-full px-5 py-3 bg-transparent border border-[#262626] text-[#e0e0ea] font-mono text-xs tracking-wider rounded-sm hover:border-[#a31c1b] hover:text-[#ffffff] hover:bg-[#a31c1b] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] focus-visible:ring-offset-2 focus-visible:ring-offset-[#171717]"
                 >
                   <ExternalLink size={13} />
                   View in Browser
@@ -209,7 +209,7 @@ export default function Resume() {
 
               {/* Last updated hint */}
               <div className="px-6 pb-5">
-                <p className="text-[10px] font-mono text-[#3a3a4a] text-center">
+                <p className="text-[10px] font-mono text-[#5a5a6a] text-center">
                   PDF · Oct 2026
                 </p>
               </div>

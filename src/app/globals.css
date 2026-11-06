@@ -160,20 +160,22 @@ body {
   box-shadow: inset 20px 0 40px rgba(0, 0, 0, 0.85);
 }
 
-/* Custom Cursor Rules */
-html.has-custom-cursor,
-html.has-custom-cursor body,
-html.has-custom-cursor a,
-html.has-custom-cursor button,
-html.has-custom-cursor [role="button"],
-html.has-custom-cursor [role="tab"] {
-  cursor: none !important;
-}
+/* Custom Cursor Rules (Only on devices with fine mouse/pointer) */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor [role="tab"] {
+    cursor: none !important;
+  }
 
-html.has-custom-cursor input,
-html.has-custom-cursor textarea,
-html.has-custom-cursor [contenteditable="true"] {
-  cursor: text !important;
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea,
+  html.has-custom-cursor [contenteditable="true"] {
+    cursor: text !important;
+  }
 }
 
 /* Reduced motion preference */

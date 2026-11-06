@@ -23,7 +23,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sectionIds = ['contact', 'resume', 'about', 'projects'];
+      const sectionIds = ['contact', 'resume', 'experience', 'about', 'projects'];
       for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (el) {
@@ -42,6 +42,18 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -63,19 +75,20 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'py-3 bg-[#171717]/85 backdrop-blur-xl border-b border-[#262626] shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
-            : 'py-6 bg-transparent'
+            ? 'py-3 bg-[#171717]/90 backdrop-blur-xl border-b border-[#262626] shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
+            : 'py-4 sm:py-6 bg-transparent'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Logo Identity */}
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
+              setMobileMenuOpen(false);
               triggerTransition('#home', 'TOP');
             }}
-            className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] rounded-sm"
+            className="group flex items-center gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] rounded-sm"
             aria-label="Aditya S. Sheregar — Back to top"
           >
             <span className="w-8 h-8 rounded-sm bg-[#06110c] border border-[#14291e] group-hover:border-[#a31c1b] flex items-center justify-center font-mono font-bold text-xs text-[#a31c1b] transition-colors">
@@ -85,8 +98,8 @@ export default function Navbar() {
               <span className="text-sm font-semibold tracking-tight text-[#f4f4f7] group-hover:text-white transition-colors">
                 Aditya S. Sheregar
               </span>
-              <span className="text-[11px] font-mono text-[#8a8a9a] hidden sm:block">
-                AI-ML & Full Stack
+              <span className="text-[10px] sm:text-[11px] font-mono text-[#8a8a9a]">
+                AI-ML &amp; Full Stack
               </span>
             </div>
           </a>
@@ -154,11 +167,11 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md border border-[#262626] bg-[#06110c] text-[#e8e8ed] hover:border-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
+            className="md:hidden p-2.5 rounded-lg border border-[#262626] bg-[#06110c] text-[#e8e8ed] hover:border-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-expanded={mobileMenuOpen}
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </header>
@@ -167,48 +180,48 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[72px] z-40 bg-[#06110c]/98 backdrop-blur-2xl border-b border-[#14291e] p-6 md:hidden shadow-2xl"
+            className="fixed inset-x-0 top-[64px] sm:top-[72px] z-40 bg-[#06110c]/98 backdrop-blur-2xl border-b border-[#14291e] p-5 sm:p-6 md:hidden shadow-2xl max-h-[calc(100dvh-64px)] overflow-y-auto"
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href, item.label, item.isBackstage)}
-                  className="px-4 py-3 rounded-lg text-sm font-medium text-[#c4c4cf] hover:text-white hover:bg-[#171717] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
+                  className="px-4 py-3 rounded-lg text-sm font-medium text-[#c4c4cf] hover:text-white hover:bg-[#171717] active:bg-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] min-h-[44px] flex items-center"
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-4 border-t border-[#14291e] flex items-center justify-between">
+              <div className="pt-4 mt-2 border-t border-[#14291e] flex items-center justify-between">
                 <div className="flex gap-3">
                   <a
                     href="https://github.com/adi202023"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-md border border-[#262626] bg-[#171717] text-[#9a9aab] hover:text-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
+                    className="p-3 rounded-md border border-[#262626] bg-[#171717] text-[#9a9aab] hover:text-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] min-h-[44px] min-w-[44px] flex items-center justify-center"
                     aria-label="GitHub"
                   >
-                    <Github size={16} />
+                    <Github size={18} />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/aditya-sheregar-4484b2326/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-md border border-[#262626] bg-[#171717] text-[#9a9aab] hover:text-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
+                    className="p-3 rounded-md border border-[#262626] bg-[#171717] text-[#9a9aab] hover:text-[#a31c1b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] min-h-[44px] min-w-[44px] flex items-center justify-center"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin size={16} />
+                    <Linkedin size={18} />
                   </a>
                 </div>
                 <a
                   href="#contact"
                   onClick={(e) => handleNavClick(e, '#contact', 'CONTACT')}
-                  className="px-4 py-2.5 rounded-md bg-[#a31c1b] text-white hover:bg-[#bd2423] font-bold text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b]"
+                  className="px-5 py-3 rounded-md bg-[#a31c1b] text-white hover:bg-[#bd2423] font-bold text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a31c1b] min-h-[44px] flex items-center"
                 >
                   Contact Me
                 </a>

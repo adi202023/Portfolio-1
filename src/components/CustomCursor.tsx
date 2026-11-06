@@ -114,7 +114,7 @@ export default function CustomCursor() {
   const activeLabel = labelMap[cursorState] || 'OPEN';
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none">
+    <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none hidden md:block">
       <motion.div
         className="fixed top-0 left-0 pointer-events-none"
         style={{

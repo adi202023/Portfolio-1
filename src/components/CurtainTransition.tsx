@@ -40,7 +40,7 @@ export function CurtainProvider({ children }: { children: React.ReactNode }) {
       }
     }, 220);
 
-    // Complete transition quickly
+    // Complete transition smoothly
     setTimeout(() => {
       setIsTransitioning(false);
     }, 480);
@@ -66,9 +66,9 @@ export function CurtainProvider({ children }: { children: React.ReactNode }) {
                 ease: [0.76, 0, 0.24, 1],
               }}
               style={{ transformOrigin: 'top' }}
-              className="w-full h-1/2 bg-[#06110c] border-b border-[#a31c1b]/40 relative flex items-end justify-center pb-4"
+              className="w-full h-[51vh] bg-[#06110c] border-b border-[#a31c1b]/40 relative flex items-end justify-center pb-4"
             >
-              <div className="font-mono text-[10px] tracking-widest text-[#a31c1b] uppercase opacity-85 font-semibold">
+              <div className="font-mono text-[9px] sm:text-[10px] tracking-widest text-[#a31c1b] uppercase opacity-85 font-semibold px-4 text-center truncate max-w-full">
                 ADITYA S. SHEREGAR // {curtainLabel}
               </div>
             </motion.div>
@@ -83,11 +83,11 @@ export function CurtainProvider({ children }: { children: React.ReactNode }) {
                 ease: [0.76, 0, 0.24, 1],
               }}
               style={{ transformOrigin: 'bottom' }}
-              className="w-full h-1/2 bg-[#06110c] border-t border-[#a31c1b]/40 relative flex items-start justify-center pt-4"
+              className="w-full h-[51vh] bg-[#06110c] border-t border-[#a31c1b]/40 relative flex items-start justify-center pt-4"
             >
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] animate-ping" />
-                <span className="font-mono text-[9px] tracking-widest text-[#8a8a9a] uppercase">
+              <div className="flex items-center gap-2 px-4 text-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a31c1b] animate-ping shrink-0" />
+                <span className="font-mono text-[8px] sm:text-[9px] tracking-widest text-[#8a8a9a] uppercase truncate">
                   SYSTEM TRANSITION ACTIVE
                 </span>
               </div>
@@ -98,4 +98,3 @@ export function CurtainProvider({ children }: { children: React.ReactNode }) {
     </CurtainContext.Provider>
   );
 }
-
